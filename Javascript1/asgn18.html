@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function openit() {
+
+            win1 = window.open("http://www.google.com", "", "width=300,height=30x, left = 0, top = 0")
+            win2 = window.open("http://www.google.com", "", "width=300,height=300, left = 980, top = 0")
+            win3 = window.open("http://www.google.com", "", "width=300,height=300, left = 980, top = 372")
+            win4 = window.open("http://www.google.com", "", "width=300,height=300, left = 0, top = 372")
+            win5 = window.open("http://www.google.com", "", "width=300px,height=300px, left = 490, top = 186")
+
+        }
+
+        function closeit() {
+            win1.close();
+            win2.close();
+            win3.close();
+            win4.close();
+            win5.close();
+        }
+    </script>
+</head>
+
+<body>
+    <img id="plant" src="imageslol/plant.jpg" alt="" onclick="openit()">
+
+    <button onclick="closeit()">close</button>
+
+</body>
+
+</html>

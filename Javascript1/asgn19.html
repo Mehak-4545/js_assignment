@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function setCookie(cname, exdays, cvalue) {
+            var visits = 1;
+
+            // var today = new Date();
+            // var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+            // var time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+            // var dateTime = date + ' at ' + time;
+            // document.cookie = 'last_visit=' + dateTime
+
+
+
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + "visits=" + visits + ";path=/";
+            const t = new Date();
+            document.cookie = "last_visit=" + t + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            let user = getCookie("username");
+            let v = getCookie("visits");
+            let tt = getCookie("last_visit");
+            console.log(tt);
+            console.log(v, "visits")
+            v++;
+            if (user != "") {
+                document.getElementById("bbb").innerHTML = "Welcome again " + user + "!" + " You have visited  " + v + " times. ";
+                document.getElementById("ccc").innerHTML = " Your last visit was at " + tt;
+                // alert("Welcome again " + user + "!" + " You have visited  " + v + " times. " + " Your last visit was at " + tt);
+                // console.log(v);
+                console.log(tt);
+                setCookie("visits", 365, v);
+                setCookie("last_visit", 365, tt);
+
+            } else {
+                user = prompt("Please enter your name:", "");
+                if (user != "" && user != null) {
+                    document.getElementById("bbb").innerHTML = "Welcome " + user + "! " + "You have visited " + v + " time."
+                    setCookie("username", 365, user);
+                    setCookie("visits", 365, 1)
+                    setCookie("last_visit", 365, tt);
+
+                }
+            }
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="aaa">
+        <img src="imageslol/plant.jpg" alt="" onload="getCookie(),checkCookie()">
+        <p>This is a plant duh</p>
+    </div>
+
+    <div id="bbb">
+
+    </div>
+
+    <div id="ccc">
+
+    </div>
+
+</body>
+
+</html>

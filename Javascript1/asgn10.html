@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+
+    <script>
+        var images = [];
+
+        function preload() {
+            for (var i = 0; i < arguments.length; i++) {
+                images[i] = new Image();
+                images[i].src = preload.arguments[i];
+            }
+        }
+
+        preload("imageslol/doggo.jpg", "imageslol/doggo2.jpg", "imageslol/doggo3.jpg", "imageslol/doggo4.jpg", "imageslol/doggo5.jpg", "imageslol/doggo6.jpg", )
+
+
+        function onMouseOver1() {
+            document.getElementById("doggos").src = "imageslol/doggo4.jpg"
+            document.getElementById("doggos2").src = "imageslol/doggo5.jpg"
+            document.getElementById("doggos3").src = "imageslol/doggo6.jpg"
+        }
+
+
+
+        function onMouseOut1() {
+            document.getElementById("doggos").src = "imageslol/doggo.jpg"
+            document.getElementById("doggos2").src = "imageslol/doggo2.jpg"
+            document.getElementById("doggos3").src = "imageslol/doggo3.jpg"
+        }
+    </script>
+
+
+    <body>
+
+        <img id="doggos" src="imageslol/doggo.jpg" style="width: 150px; height: 150px " />
+        <br>
+        <img id="doggos2" src="imageslol/doggo2.jpg" style="width: 150px; height: 150px " />
+        <br>
+        <img id="doggos3" src="imageslol/doggo3.jpg" style="width: 150px; height: 150px " />
+        <br>
+        <img id="doggos4" src="imageslol/doggonew.jpg" style="width: 150px; height: 150px " onmouseover="onMouseOver1()" onmouseout="onMouseOut1()" alt="">
+
+
+    </body>
+</head>
+
+</html>

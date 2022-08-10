@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Document</title>
+    <style>
+        .slides {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    </style>
+    <script>
+        var count = 0;
+
+        function load() {
+            if (count == 0) {
+                document.getElementById("prev").style.visibility = "hidden";
+                document.getElementById("next").style.visibility = "visible";
+            }
+        }
+
+        function nextCombine() {
+            document.getElementById(id).src = source;
+        }
+
+
+        function dispNext(source) {
+            document.getElementById("show").src = source;
+        }
+
+        function sNext() {
+
+            count++;
+            if (count == 4) {
+                document.getElementById("prev").style.visibility = "visible";
+                document.getElementById("next").style.visibility = "hidden";
+                document.getElementById("show").src = "imageslol/sshow5.jpg";
+                document.getElementsByClassName("next").src = "";
+            } else {
+                document.getElementById("prev").style.visibility = "visible";
+                document.getElementById("next").style.visibility = "visible";
+                if (count == 1) {
+                    dispNext("imageslol/sshow2.jpg")
+                }
+                if (count == 2) {
+                    dispNext("imageslol/sshow3.jpg")
+                }
+                if (count == 3) {
+                    dispNext("imageslol/sshow4.jpg")
+                }
+
+            }
+
+
+            // if (count == 1) {
+            //     document.getElementById("prev").style.visibility = "visible";
+            //     document.getElementById("next").style.visibility = "visible";
+            //     document.getElementById("show").src = "imageslol/sshow2.jpg";
+            // }
+            // if (count == 2) {
+            //     document.getElementById("prev").style.visibility = "visible";
+            //     document.getElementById("next").style.visibility = "visible";
+            //     document.getElementById("show").src = "imageslol/sshow3.jpg";
+            // }
+            // if (count == 3) {
+            //     document.getElementById("prev").style.visibility = "visible";
+            //     document.getElementById("next").style.visibility = "visible";
+            //     document.getElementById("show").src = "imageslol/sshow4.jpg";
+            // }
+
+
+        }
+
+
+        function dispPrev(source) {
+            document.getElementById("show").src = source;
+        }
+
+        function sPrev() {
+
+            count--;
+
+            if (count == 0) {
+                document.getElementById("prev").style.visibility = "hidden";
+                document.getElementById("next").style.visibility = "visible";
+                document.getElementById("show").src = "imageslol/sshow1.jpg";
+                document.getElementsByClassName("prev").src = "";
+            } else {
+                document.getElementById("prev").style.visibility = "visible";
+                document.getElementById("next").style.visibility = "visible";
+                if (count == 1) {
+                    dispPrev("imageslol/sshow2.jpg");
+                }
+                if (count == 2) {
+                    dispPrev("imageslol/sshow3.jpg");
+                }
+                if (count == 3) {
+                    dispPrev("imageslol/sshow4.jpg");
+                }
+                if (count == 4) {
+                    dispPrev("imageslol/sshow5.jpg");
+                }
+            }
+
+
+            // if (count == 1) {
+            //     document.getElementById("prev").style.visibility = "visible";
+            //     document.getElementById("next").style.visibility = "visible";
+            //     document.getElementById("show").src = "imageslol/sshow2.jpg";
+            // }
+            // if (count == 2) {
+            //     document.getElementById("prev").style.visibility = "visible";
+            //     document.getElementById("next").style.visibility = "visible";
+            //     document.getElementById("show").src = "imageslol/sshow3.jpg";
+            // }
+            // if (count == 3) {
+            //     document.getElementById("prev").style.visibility = "visible";
+            //     document.getElementById("next").style.visibility = "visible";
+            //     document.getElementById("show").src = "imageslol/sshow4.jpg";
+            // }
+            // if (count == 4) {
+            //     document.getElementById("prev").style.visibility = "visible";
+            //     document.getElementById("next").style.visibility = "visible";
+            //     document.getElementById("show").src = "imageslol/sshow5.jpg";
+            // }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="slides">
+        <img src="imageslol/sshow1.jpg" id="show" alt="" style="height: 250px; width: 300px;" onload="load()" />
+    </div>
+    <br>
+    <div class="buttons">
+        <button id="prev" onclick="sPrev()">
+            <!-- <i class="fa-solid fa-arrow-left"></i> -->
+            <img src="imageslol/left.png" alt="" height="20px" width="20px">
+            <script>
+                if (count==0){
+                    display:none;
+                }
+            </script>
+        </button>
+        <button id="next" onclick="sNext()">
+            <!-- <i class="fa-solid fa-arrow-right"></i> -->
+            <img src="imageslol/right.png" alt="" height="20px" width="20px">
+            <script>
+                if (count==4){
+                    display:none;
+                }
+            </script>
+        </button>
+    </div>
+
+
+</body>
+
+</html>

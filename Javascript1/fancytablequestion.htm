@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<table>
+    <tr class="bg-info">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email Id</th>
+        <th>Avatar</th>
+    </tr>
+
+    <tbody id="myTable">
+
+    </tbody>
+</table>
+<style>
+    table {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td,
+    th {
+        border: 1px solid black;
+        text-align: left;
+        padding: 10px;
+    }
+</style>
+<script>
+    var storeArray = []
+
+    const req = new XMLHttpRequest();
+    req.onload = function() {
+        console.log(typeof(req.responseText));
+        console.log(req.responseText);
+        const obj1 = JSON.parse(req.responseText);
+        console.log(obj1);
+        buildTable(obj1);
+
+    }
+    req.open("GET", "https://reqres.in/api/users", true); // true indicates async  
+    req.send();
+
+
+
+    function buildTable(data1) {
+        var table = document.getElementById('myTable')
+
+        for (var i = 0; i < data1.data.length; i++) {
+            var row = `<tr>
+							<td>${data1.data[i].first_name}</td>
+							<td>${data1.data[i].last_name}</td>
+							<td>${data1.data[i].email}</td>
+                            <td><img src="${data1.data[i].avatar}"></td>
+					  </tr>`
+            table.innerHTML += row
+
+
+        }
+    }
+</script>

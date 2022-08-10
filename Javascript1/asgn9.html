@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+
+    <script>
+        function onMouseOver(id1, source1) {
+            document.getElementById(id1).src = source1;
+        }
+
+        function onMouseOut(id1, source1) {
+            document.getElementById(id1).src = source1;
+        }
+
+
+        // function onMouseOver1() {
+        //     document.getElementById("doggos").src = "imageslol/doggo4.jpg"
+        // }
+
+        // function onMouseOver2() {
+        //     document.getElementById("doggos2").src = "imageslol/doggo5.jpg"
+        // }
+
+        // function onMouseOver3() {
+        //     document.getElementById("doggos3").src = "imageslol/doggo6.jpg"
+        // }
+
+
+
+
+        // function onMouseOut1() {
+
+        //     document.getElementById("doggos").src = "imageslol/doggo.jpg"
+
+        // }
+
+        // function onMouseOut2() {
+
+        //     document.getElementById("doggos2").src = "imageslol/doggo2.jpg"
+
+        // }
+
+        // function onMouseOut3() {
+
+        //     document.getElementById("doggos3").src = "imageslol/doggo3.jpg"
+
+        // }
+    </script>
+
+
+    <body>
+
+        <img id="doggos" src="imageslol/doggo.jpg" onmouseover="onMouseOver('doggos','imageslol/doggo4.jpg')" onmouseout="onMouseOut('doggos','imageslol/doggo.jpg')" style="width: 250px; height: 250px " />
+        <br>
+        <img id="doggos2" src="imageslol/doggo2.jpg" onmouseover="onMouseOver('doggos2','imageslol/doggo5.jpg')" onmouseout="onMouseOut('doggos2','imageslol/doggo2.jpg')" style="width: 250px; height: 250px " />
+        <br>
+        <img id="doggos3" src="imageslol/doggo3.jpg" onmouseover="onMouseOver('doggos3','imageslol/doggo6.jpg')" onmouseout="onMouseOut('doggos3','imageslol/doggo3.jpg')" style="width: 250px; height: 250px " />
+
+
+    </body>
+</head>
+
+</html>

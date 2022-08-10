@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        var userName = prompt("PLease enter your name....");
+        var color1 = prompt("Enter the color");
+
+
+        var array1 = new Array(5);
+        for (let i = 0; i < 5; i++) {
+
+            if (i == 0) {
+                array1[i] = prompt("Please enter the " + (i + 1) + "st word: ")
+            } else if (i == 1) {
+                array1[i] = prompt("Please enter the " + (i + 1) + "nd word: ")
+            } else if (i == 2) {
+                array1[i] = prompt("Please enter the " + (i + 1) + "rd word: ")
+            } else {
+                array1[i] = prompt("Please enter the " + (i + 1) + "th word: ")
+            }
+
+            // array1[i] = prompt("Please enter the " + (i + 1) + "th word: ")
+        }
+
+        document.write(userName + " lived in a castle. ");
+        document.write("<div style = \"color : " + color1 + " ; display : inline;\">");
+        document.write(array1[0]);
+        document.write("</div>")
+        document.write(" came to visit " + userName + " and brought ");
+        document.write("<div style = \"color : " + color1 + " ; display : inline;\">");
+        document.write(array1[1]);
+        document.write("</div>")
+        document.write(" for " + userName + " , received a ");
+        document.write("<div style = \"color : " + color1 + " ; display : inline;\">");
+        document.write(array1[2]);
+        document.write("</div>")
+        document.write(" in return. They had  ");
+        document.write("<div style = \"color : " + color1 + " ; display : inline;\">");
+        document.write(array1[3]);
+        document.write("</div>")
+        document.write(" for supper and lived happily ever after in a ");
+        document.write("<div style = \"color : " + color1 + " ; display : inline;\">");
+        document.write(array1[4]);
+        document.write("</div>")
+        document.write(". ")
+    </script>
+
+</body>
+
+</html>

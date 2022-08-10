@@ -1,0 +1,76 @@
+// function validate() { // var user = document.getElementById("e").value; // var user2 = document.getElementById("e"); // console.log(user2); // var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // if (re.test(user)) { // alert("done"); // return
+true; // } else { // user2.style.border = "red solid 3px"; // return false; // } // } function ValidateNumber() { let myphone1 = document.getElementById("phone").value; let myphone2 = myphone1.trim(); if (myphone2.length == 0) { createprompt("Please enter
+a your Phone Number", "validate_phone"); return false; } // if(!myphone2.match(/^(((\+91)?\s*(-)?\s*)|(0?)|((91)?\s*(-)\s*))[6789][0-9]{9}$/)){ // } if (!myphone2.match(/^((\+91)?|(0{1,2})|(91))\s*-?\s*[0-9]{10}/)) { document.getElementById("phone").innerHTML
+= "Invalid Phone Number" } }
+<center>
+    <h1>Sign up Form</h1>
+    <form>
+        <fieldset style="width:300px">
+            <table>
+                <tr>
+                    <label for="Education">Education :  </label>
+                    <select name="" id="">
+                            <option value="B tech">B tech</option>
+                            <option value="M tech">M tech</option>
+                            <option value="B sc">B sc</option>
+                            <option value="M sc">B sc</option>
+                            </select>
+
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <input type="number" placeholder="Phonenumber">
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <input type="number" placeholder="Age">
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <label for="Gender">Gender :  </label>
+                    <select name="" id="">
+                            <option value="">Male</option>
+                            <option value="">Female</option>
+                            <option value="">Other</option>
+                        </select>
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <input type="text" placeholder="username@gmail.com" id="e">
+                    <br><br>
+                </tr>
+
+
+                <tr>
+                    <input type="password" placeholder="password">
+                </tr>
+
+                <br><br>
+                <tr>
+                    <input type="password" placeholder="confirm">
+                </tr>
+
+                <br><br>
+                <tr>
+                    <input type="text" placeholder="Name" maxlength="10">
+                </tr>
+
+                <br><br>
+                <tr>
+                    <input type="text" placeholder="City" maxlength="10">
+                </tr>
+                <br><br>
+
+                <tr><input type="submit" onclick="validate()" value="create">
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</center>
+</body>
+
+</html>

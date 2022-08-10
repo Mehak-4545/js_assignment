@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .smiley {
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10vh;
+    }
+    
+    .press {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 2rem;
+        color: deeppink;
+        background-color: azure;
+        border-radius: 3rem;
+        margin-left: 10vw;
+    }
+</style>
+
+<body>
+
+    <script>
+        const wins = [];
+        var i = 0;
+
+        function openit() {
+
+            wins[i] = window.open("http://www.google.com", "", "width=300px,height=300px");
+            console.log("added");
+            i++;
+
+        }
+
+        function closeit() {
+            wins[i].close();
+            console.log("deleted");
+            i--;
+
+
+        }
+    </script>
+
+    <br>
+    <img class="smiley" src="imageslol/smiley.png" alt="" onclick="openit()">
+
+
+    <form>
+        <input type="button" class="press" value="Close" onClick="closeit()">
+    </form>
+
+
+</body>
+
+</html>

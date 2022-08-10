@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var count = 0;
+
+        function sShow() {
+
+            count++;
+            if (count == 1) {
+                display("imageslol/sshow2.jpg");
+            }
+            if (count == 2) {
+                display("imageslol/sshow3.jpg");
+            }
+            if (count == 3) {
+                display("imageslol/sshow4.jpg");
+            }
+            if (count == 4) {
+                display("imageslol/sshow5.jpg");
+            }
+
+        }
+
+        function display(source) {
+            document.getElementById("show").src = source;
+        }
+    </script>
+</head>
+
+<body>
+    <img src="imageslol/sshow1.jpg" id="show" alt="" style="height: 250px; width: 300px;" onclick="sShow()" />
+
+    <!-- <img id="flower" src="imageslol/flo1.jpg" onclick="onClick()" /> -->
+
+</body>
+
+</html>

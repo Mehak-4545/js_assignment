@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <script scr="mycript.js"></script>
+    <style>
+        legend {
+            display: block;
+            padding-left: 2px;
+            padding-right: 2px;
+            border: none;
+        }
+    </style>
+
+    <script>
+        function ValidateNumber() {
+            let myphone1 = document.getElementById("phone").value;
+            let myphone2 = myphone1.trim();
+
+            if (myphone2.length == 0) {
+                document.getElementById("validate_phone").innerHTML = "Please enter your phone number";
+                return false;
+            }
+
+            // if (!myphone2.match(/^((\+91)?|(0{1,2})|(91))\s*-?\s*[0-9]{10}/)) {
+
+            if (!myphone2.match(/^((\+)[0-9]{2})?\s?-?\s?[0-9]{10}$/)) {
+                document.getElementById("validate_phone").innerHTML = "Invalid Phone Number";
+                return false;
+            }
+
+            document.getElementById("validate_phone").innerHTML = "Valid number";
+            return true;
+        }
+
+
+        function ValidateAge() {
+            let myage1 = document.getElementById("age").value;
+            let myage2 = myage1.trim();
+
+            if (myage2.length == 0) {
+                document.getElementById("validate_age").innerHTML = "Please enter your age";
+                return false;
+            }
+
+
+            if (!myage2.match(/^\d\d?$/)) {
+                document.getElementById("validate_age").innerHTML = "Invalid age";
+                return false;
+            }
+
+            document.getElementById("validate_age").innerHTML = "Valid age";
+            return true;
+        }
+
+
+        function ValidateMail() {
+            let mymail1 = document.getElementById("mail").value;
+            let mymail2 = mymail1.trim();
+
+            if (mymail2.length == 0) {
+                document.getElementById("validate_mail").innerHTML = "Please enter your E-mail Address";
+                return false;
+            }
+
+
+            if (!mymail2.match(/^[\w.!#$%&’*+/=?^_`{|}~-]+@(\w+\.)+([\w]{2,3})$/)) {
+                document.getElementById("validate_mail").innerHTML = "Invalid mail";
+                return false;
+            }
+
+            document.getElementById("validate_mail").innerHTML = "Valid E-mail Address";
+            return true;
+        }
+
+
+        function ValidatePassword() {
+            let mypass1 = document.getElementById("pass").value;
+            let mypass2 = mypass1.trim();
+
+            if (mypass2.length == 0) {
+                document.getElementById("validate_pass").innerHTML = "Please enter your password";
+                return false;
+            }
+
+
+            if (mypass2.length < 8) {
+                document.getElementById("validate_pass").innerHTML = "Password must contain atleast 8 characters";
+                return false;
+            }
+
+
+            if (!mypass2.match(/[A-Z]/)) {
+                document.getElementById("validate_pass").innerHTML = "Password must contain atleast 1 uppercase character";
+                return false;
+            }
+
+            if (!mypass2.match(/[\W]/)) {
+                document.getElementById("validate_pass").innerHTML = "Password must contain atleast 1 special character";
+                return false;
+            }
+
+            document.getElementById("validate_pass").innerHTML = "Valid password";
+            return true;
+        }
+
+
+        function ValidateConfirm() {
+            let myconf1 = document.getElementById("conf").value;
+            let myconf2 = myconf1.trim();
+
+
+            let mypass1 = document.getElementById("pass").value;
+            let mypass2 = mypass1.trim();
+
+
+            if (myconf2.length == 0) {
+                document.getElementById("validate_conf").innerHTML = "Please enter your password again";
+                return false;
+            }
+
+            console.log(mypass2);
+            console.log(myconf2);
+
+
+            if (myconf2 != mypass2) {
+                document.getElementById("validate_conf").innerHTML = "Password does not match";
+                return false;
+            }
+
+            document.getElementById("validate_conf").innerHTML = "Valid password";
+            return true;
+        }
+
+
+        function ValidateName() {
+            let myname1 = document.getElementById("name").value;
+            let myname2 = myname1.trim();
+
+            if (myname2.length == 0) {
+                document.getElementById("validate_name").innerHTML = "Please enter your name";
+                return false;
+            }
+
+
+            if (!myname2.match(/^[a-zA-Z]+((\s[a-zA-Z]+)+)?$/)) {
+                document.getElementById("validate_name").innerHTML = "Invalid name";
+                return false;
+            }
+
+            document.getElementById("validate_name").innerHTML = "Valid name";
+            return true;
+        }
+
+
+        function ValidateCity() {
+            let mycity1 = document.getElementById("city").value;
+            let mycity2 = mycity1.trim();
+
+            if (mycity2.length == 0) {
+                document.getElementById("validate_city").innerHTML = "Please enter your city";
+                return false;
+            }
+
+
+            if (!mycity2.match(/^[a-zA-Z]+((\s[a-zA-Z]+)+)?$/)) {
+                document.getElementById("validate_city").innerHTML = "Invalid city";
+                return false;
+            }
+
+            document.getElementById("validate_city").innerHTML = "Valid city";
+            return true;
+        }
+
+
+        function ValidateAll() {
+            if (ValidateNumber() && ValidateAge() && ValidateMail() && ValidatePassword() && ValidateConfirm() && ValidateName() && ValidateCity()) {
+                document.getElementById("validate_all").innerHTML = "All fields are valid!";
+                return true;
+            } else {
+                document.getElementById("validate_all").innerHTML = "Invalid Entries";
+                return false;
+            }
+        }
+    </script>
+
+</head>
+
+<body bgcolor="white">
+    <!-- <center> -->
+    <h1>Sign up Form</h1>
+    <form>
+        <fieldset style="width:100vw">
+
+
+            <table>
+
+                <tr>
+                    <label for="Education">Education :  </label>
+                    <br>
+                    <select name="" id="edu">
+                            <option value="B tech">B tech</option>
+                            <option value="M tech">M tech</option>
+                            <option value="B sc">B sc</option>
+                            <option value="M sc">B sc</option>
+                    </select>
+                    <label id="validate_edu"></label>
+
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <label for="phone">Phone Number : </label>
+                    <br>
+                    <input type="text" placeholder="0000000000" id="phone" onkeyup="ValidateNumber()">
+                    <label id="validate_phone"></label>
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <label for="age">Age : </label>
+                    <br>
+                    <input type="text" placeholder="Age" id="age" onkeyup="ValidateAge()">
+                    <label id="validate_age"></label>
+
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <label for="Gender">Gender :  </label>
+                    <br>
+                    <select name="" id="gender">
+                            <option value="">Male</option>
+                            <option value="">Female</option>
+                            <option value="">Other</option>
+                    </select>
+                    <label id="validate_gender"></label>
+                    <br><br>
+                </tr>
+
+                <tr>
+                    <label for="mail">E-mail Address : </label>
+                    <br>
+                    <input type="text" placeholder="Username@gmail.com" id="mail" onkeyup="ValidateMail()">
+                    <label id="validate_mail"></label>
+                    <br><br>
+                </tr>
+
+
+                <tr>
+                    <label for="password">Password : </label>
+                    <br>
+                    <input type="password" placeholder="Password" id="pass" onkeyup="ValidatePassword()">
+                    <label id="validate_pass"></label>
+                    <br><br>
+                </tr>
+
+
+                <tr>
+                    <label for="confirm">Confirm Password : </label>
+                    <br>
+                    <input type="password" placeholder="Confirm" id="conf" onkeyup="ValidateConfirm()">
+                    <label id="validate_conf"></label>
+                </tr>
+
+                <br><br>
+                <tr>
+                    <label for="Name">Name : </label>
+                    <br>
+                    <input type="text" placeholder="Name" id="name" onkeyup="ValidateName()">
+                    <label id="validate_name"></label>
+                </tr>
+
+                <br><br>
+                <tr>
+                    <label for="City">City : </label>
+                    <br>
+                    <input type="text" placeholder="City" id="city" onkeyup="ValidateCity()">
+                    <label id="validate_city"></label>
+                </tr>
+                <br><br>
+
+                <tr><input type="button" onclick="ValidateAll()" value="Sign Up!!" id="sub">
+                    <label id="validate_all"></label>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    </center>
+</body>
+
+</html>
